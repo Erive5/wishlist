@@ -1,0 +1,337 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>WishList · Inicio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap">
+<style>
+/* Página contenedora: un solo teléfono 390×844 centrado, notas de privacidad al lado. */
+:root{
+  --bg:#EFEEEA; --fg:#17181B; --muted:#5B5E66; --line:#D6D4CE;
+  --ui:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151518;--fg:#ECEDEF;--muted:#A3A6AE;--line:#2E3036;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#151518;--fg:#ECEDEF;--muted:#A3A6AE;--line:#2E3036;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui)}
+.page{max-width:980px;margin:0 auto;padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;align-items:center;gap:18px}
+.intro{text-align:center;display:flex;flex-direction:column;gap:4px}
+.intro h1{margin:0;font-size:20px;font-weight:600;letter-spacing:-.01em}
+.intro p{margin:0;color:var(--muted);font-size:14px}
+.stage{display:flex;gap:28px;align-items:flex-start;justify-content:center;flex-wrap:wrap;width:100%}
+.notes{max-width:250px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:10px;padding-top:12px}
+.notes h2{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--fg)}
+.notes ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.legend{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.legend span{display:flex;gap:8px;align-items:center}
+.legend i{width:12px;height:12px;border-radius:4px;flex:none}
+@media (max-width:760px){.notes{max-width:390px;padding-top:0}}
+
+/* Marco de teléfono */
+.phone{position:relative;width:min(390px,100%);height:844px;border-radius:46px;overflow:hidden;box-shadow:0 0 0 10px #0E0F12,0 0 0 11px #2A2C31,0 30px 60px -20px rgba(0,0,0,.4);background:var(--p-bg);color:var(--ink);isolation:isolate;margin:11px}
+.status{position:absolute;inset:0 0 auto;height:50px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 34px;font:600 15px/1 var(--ui);z-index:6;background:var(--p-bg);color:var(--ink)}
+.status .isl{position:absolute;left:50%;top:11px;width:122px;height:34px;margin-left:-61px;border-radius:20px;background:#000}
+.status .sig{display:flex;gap:6px;align-items:center}
+.status .bat{width:25px;height:12px;border:1.5px solid currentColor;border-radius:4px;position:relative}
+.status .bat::after{content:"";position:absolute;inset:1.5px 5px 1.5px 1.5px;background:currentColor;border-radius:1.5px}
+.scroll{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;padding-top:50px;scrollbar-width:none}
+.scroll::-webkit-scrollbar{display:none}
+.homebar{position:absolute;left:50%;bottom:8px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:var(--ink);z-index:8}
+.toast{position:absolute;left:20px;right:20px;bottom:110px;z-index:9;background:var(--ink);color:#fff;font:500 13.5px/1.35 var(--ui);padding:12px 14px;border-radius:14px;opacity:0;transform:translateY(8px);transition:opacity .2s,transform .2s;pointer-events:none}
+.toast.on{opacity:1;transform:none}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.phone ul{list-style:none;margin:0;padding:0}
+.phone button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.phone h1,.phone h2,.phone p{margin:0}
+.phone svg{flex:none}
+.phone :focus-visible{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:8px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ===== A refinada · minimalismo cálido =====
+   Cobalto = acción y estado · Naranja = ocasiones y celebraciones · Morado = grupos, votos y lo compartido */
+.va{
+  --p-bg:#FFFFFF; --ink:#15172A; --mut:#5E6070; --line:#ECEAE5; --surf:#F7F6F3;
+  --cobalt:#2346D8; --cobalt-soft:#EEF1FD;
+  --purple:#8B5CF6; --purple-ink:#6D3FD9; --purple-soft:#F4EFFF;
+  --orange:#FB923C; --orange-ink:#B5440F; --orange-soft:#FFF2E7;
+  font-family:"Geist",system-ui,sans-serif;
+}
+.va .scr{padding:6px 22px 124px;display:flex;flex-direction:column;gap:34px}
+.va .sec{display:flex;flex-direction:column;gap:12px}
+.va .sh{display:flex;justify-content:space-between;align-items:center;min-height:44px}
+.va h2{font-size:16px;font-weight:600;letter-spacing:-.015em;display:flex;gap:8px;align-items:center}
+.va .more{font-size:13.5px;color:var(--cobalt);font-weight:500;min-height:44px;display:flex;align-items:center}
+
+/* Saludo */
+.va .hello{display:flex;flex-direction:column;gap:2px}
+.va .topline{display:flex;justify-content:space-between;align-items:center}
+.va .date{font-size:13px;color:var(--mut);display:flex;align-items:center;gap:8px}
+.va .date::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--orange)}
+.va .av{width:44px;height:44px;border-radius:50%;background:var(--purple-soft);color:var(--purple-ink);display:grid;place-items:center;font-size:14px;font-weight:600}
+.va .greet{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin-top:4px}
+.va h1{font-size:34px;font-weight:600;letter-spacing:-.035em;line-height:1.05;padding-bottom:12px}
+.va h1 .name{position:relative;display:inline-block}
+.va h1 .name svg{position:absolute;left:-2px;right:-4px;bottom:-9px;width:calc(100% + 6px);height:12px}
+.va .mascot{width:104px;height:104px;margin-right:-8px;margin-bottom:-6px}
+
+/* Avisos */
+.va .alerts{display:flex;flex-direction:column;gap:8px}
+.va .alert{display:flex;gap:14px;align-items:center;width:100%;padding:14px 14px 14px 12px;min-height:72px;border-radius:18px;background:var(--surf)}
+.va .alert.first{background:var(--orange-soft)}
+.va .alert .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:#fff;color:var(--orange-ink)}
+.va .alert.first .ico{background:transparent}
+.va .alert .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.va .alert .when{font-size:12px;font-weight:600;color:var(--orange-ink)}
+.va .alert strong{font-size:15.5px;font-weight:600;letter-spacing:-.01em}
+.va .alert .s{font-size:13px;color:var(--mut)}
+.va .alert .chev{color:var(--mut)}
+
+/* Filas genéricas */
+.va .rows li+li{border-top:1px solid var(--line)}
+.va .row{display:flex;gap:14px;align-items:center;width:100%;padding:13px 0;min-height:64px}
+.va .row .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.va .row .t{font-size:15px;font-weight:500;letter-spacing:-.005em}
+.va .row .s{font-size:13px;color:var(--mut)}
+.va .tile{width:42px;height:42px;border-radius:13px;background:var(--surf);display:grid;place-items:center;color:var(--ink);flex:none}
+
+/* Votos */
+.va .count{font-size:12px;font-weight:600;background:var(--purple-ink);color:#fff;border-radius:10px;padding:1px 8px}
+.va .vote .tile{background:var(--purple-soft);color:var(--purple-ink)}
+.va .vote .k{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--purple-ink);font-weight:600}
+.va .vote .t{font-size:14.5px}
+
+/* Regalos que organizas */
+.va .gift .tile{background:var(--cobalt-soft);color:var(--cobalt)}
+.va .pill{font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px;white-space:nowrap;display:inline-flex;gap:4px;align-items:center;background:var(--cobalt-soft);color:var(--cobalt)}
+.va .pill.bought{background:var(--ink);color:#fff}
+.va .meter{height:6px;background:var(--line);border-radius:3px;margin-top:7px;overflow:hidden}
+.va .meter i{display:block;height:100%;background:var(--cobalt);border-radius:3px}
+.va .meter-l{font-size:12px;color:var(--mut);margin-top:3px}
+.va .colab-tag{display:inline-flex;align-self:flex-start;font-size:11px;font-weight:600;color:var(--purple-ink);background:var(--purple-soft);border-radius:6px;padding:2px 7px;margin-top:4px}
+
+/* Próximas ocasiones: línea de tiempo */
+.va .occ-h .dots{display:inline-flex;gap:3px}
+.va .occ-h .dots i{width:5px;height:5px;border-radius:50%}
+.va .tl{position:relative}
+.va .tl::before{content:"";position:absolute;left:22px;top:30px;bottom:30px;border-left:2px dotted #E2DED6}
+.va .tl li{position:relative}
+.va .occ{display:flex;gap:14px;align-items:center;width:100%;padding:8px 0;min-height:68px}
+.va .cal{position:relative;z-index:1;width:46px;height:52px;border-radius:14px;background:var(--orange-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;flex:none;box-shadow:0 0 0 4px #fff}
+.va .cal b{font-size:20px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.va .cal span{font-size:10.5px;font-weight:600;color:var(--orange-ink);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+.va .occ .tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+.va .occ .t{font-size:15px;font-weight:500}
+.va .occ .s{font-size:13px;color:var(--mut)}
+.va .left{font-size:12px;font-weight:600;color:var(--mut);white-space:nowrap;font-variant-numeric:tabular-nums;padding:4px 9px;border-radius:999px;background:var(--surf)}
+.va .left.soon{background:var(--orange-soft);color:var(--orange-ink)}
+.va .occ.own{background:var(--purple-soft);border-radius:18px;padding:8px 10px 8px 0;margin:4px 0;width:100%}
+.va .occ.own .cal{background:#fff;box-shadow:0 0 0 4px var(--purple-soft)}
+.va .occ.own .cal span{color:var(--purple-ink)}
+.va .occ.own .left{background:#fff}
+.va .lock{font-size:12px;font-weight:500;color:var(--purple-ink);display:flex;gap:4px;align-items:center}
+
+/* Mis listas */
+.va .lists{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.va .lcard{border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:132px}
+.va .lcard b{font-size:30px;font-weight:600;letter-spacing:-.04em;line-height:1}
+.va .lcard b small{font-size:13px;font-weight:500;letter-spacing:0;color:var(--mut);margin-left:4px}
+.va .lcard .t{font-size:14.5px;font-weight:600;display:block}
+.va .tag{display:inline-flex;gap:4px;align-items:center;font-size:11.5px;font-weight:600;border-radius:6px;padding:2px 7px;margin-top:6px}
+.va .tag.shared{background:var(--purple-soft);color:var(--purple-ink)}
+.va .tag.priv{background:var(--surf);color:var(--mut)}
+.va .add{display:flex;align-items:center;justify-content:center;gap:8px;width:100%!important;text-align:center!important;min-height:52px;border-radius:16px;background:var(--cobalt)!important;color:#fff!important;font-weight:600!important;font-size:15px}
+
+/* Mis grupos */
+.va .grp-h{display:flex;justify-content:space-between;align-items:flex-end}
+.va .friends{width:104px;height:62px;margin-bottom:-4px}
+.va .chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -22px;padding:0 22px}
+.va .chips::-webkit-scrollbar{display:none}
+.va .chip{border:1px solid var(--line);border-radius:999px;padding:0 14px 0 5px;min-height:46px;display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;white-space:nowrap}
+.va .chip i{width:34px;height:34px;border-radius:50%;background:var(--purple-soft);color:var(--purple-ink);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:600}
+.va .chip span{color:var(--mut);font-weight:400}
+
+/* Navegación */
+.va .nav{position:absolute;inset:auto 0 0;z-index:7;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);padding:6px 6px 26px}
+.va .nav button{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;font-weight:500;color:var(--mut);min-height:52px;justify-content:center;text-align:center}
+.va .nav button .pi{width:52px;height:30px;border-radius:15px;display:grid;place-items:center}
+.va .nav button[aria-current="page"]{color:var(--cobalt);font-weight:600}
+.va .nav button[aria-current="page"] .pi{background:var(--cobalt-soft)}
+</style>
+
+<div class="page">
+  <div class="intro">
+    <h1>WishList · Pantalla de inicio</h1>
+    <p>Propuesta A refinada · minimalismo cálido</p>
+  </div>
+  <div class="stage">
+    <div class="phone va" id="panel"></div>
+    <aside class="notes" aria-label="Reglas aplicadas">
+      <h2>Uso del color</h2>
+      <div class="legend">
+        <span><i style="background:#2346D8"></i>Cobalto · acciones y estados</span>
+        <span><i style="background:#FB923C"></i>Naranja · ocasiones y avisos</span>
+        <span><i style="background:#8B5CF6"></i>Morado · grupos, votos y listas compartidas</span>
+      </div>
+      <h2 style="margin-top:8px">Privacidad aplicada</h2>
+      <ul>
+        <li>Tus listas solo muestran deseos pendientes y con qué grupos se comparten; nunca reservas sobre ellos.</li>
+        <li>En tu cumpleaños y en Navidad, donde también eres destinataria, no aparece ninguna organización.</li>
+        <li>Los aportes colaborativos se muestran como compromisos estimados, no como dinero reunido.</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+
+<script>
+const D = {
+  user:{apodo:"Ana", ini:"AM"},
+  hoy:"Jueves, 5 de noviembre",
+  avisos:[
+    {ocasion:"Cumpleaños de Lucía", dias:7, fecha:"jue 12 nov", grupo:"Familia Ríos"},
+    {ocasion:"Aniversario de Pablo y Marta", dias:14, fecha:"jue 19 nov", grupo:"Familia Ríos"}
+  ],
+  votos:[
+    {tipo:"Ingreso al grupo", texto:"Sofía Martín quiere unirse a Familia Ríos"},
+    {tipo:"Regalo colaborativo", texto:"Javier pide participar en «Cafetera espresso»"}
+  ],
+  compromisos:[
+    {deseo:"Auriculares inalámbricos", para:"Lucía", ocasion:"Cumpleaños · 12 nov", estado:"Reservado", ic:"gift"},
+    {deseo:"Cafetera espresso", para:"Pablo", ocasion:"Aniversario · 19 nov", estado:"Reservado", colab:{part:3, aporte:90, precio:140}, ic:"users"},
+    {deseo:"Libro «Cocina de temporada»", para:"Diego", ocasion:"Cumpleaños · 3 dic", estado:"Comprado", ic:"book"}
+  ],
+  ocasiones:[
+    {dia:"12", mes:"nov", nombre:"Cumpleaños de Lucía", para:"Lucía", grupos:"Familia Ríos", dias:7},
+    {dia:"19", mes:"nov", nombre:"Aniversario de Pablo y Marta", para:"Pablo y Marta", grupos:"Familia Ríos", dias:14},
+    {dia:"3", mes:"dic", nombre:"Cumpleaños de Diego", para:"Diego", grupos:"Amigos de la uni", dias:28},
+    {dia:"16", mes:"dic", nombre:"Tu cumpleaños", grupos:"Familia Ríos · Amigos de la uni", dias:41, own:true},
+    {dia:"25", mes:"dic", nombre:"Navidad", para:"todo el grupo, también tú", grupos:"Familia Ríos", dias:50}
+  ],
+  listas:[
+    {nombre:"Para mi cumpleaños", pend:6, comp:"Compartida con 2 grupos", shared:true},
+    {nombre:"Casa nueva", pend:4, comp:"Privada"}
+  ],
+  grupos:[{n:"Familia Ríos", m:8, i:"FR"},{n:"Amigos de la uni", m:5, i:"AU"},{n:"Club de lectura", m:6, i:"CL"}],
+  nav:[["home","Inicio"],["users","Grupos"],["list","Mis listas"],["cal","Ocasiones"],["gift","Regalos"]]
+};
+
+const P = {
+  home:'<path d="M3.5 10.5 12 3.5l8.5 7V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/>',
+  users:'<circle cx="9" cy="8" r="3.4"/><path d="M2.8 20c.8-3.5 3.3-5.4 6.2-5.4s5.4 1.9 6.2 5.4"/><path d="M15.8 4.9a3.3 3.3 0 0 1 0 6.3M17.6 14.9c2 .7 3.2 2.4 3.6 5.1"/>',
+  list:'<path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.6" cy="6.5" r=".9" fill="currentColor"/><circle cx="4.6" cy="12" r=".9" fill="currentColor"/><circle cx="4.6" cy="17.5" r=".9" fill="currentColor"/>',
+  cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="2.2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  gift:'<rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7.5M12 8.5V21"/><path d="M12 8.5C10.6 5.2 7.2 4.6 7.2 6.8c0 1.7 4.8 1.7 4.8 1.7zM12 8.5c1.4-3.3 4.8-3.9 4.8-1.7 0 1.7-4.8 1.7-4.8 1.7z"/>',
+  book:'<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5zM20 5.5A1.5 1.5 0 0 0 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5z"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  bell:'<path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',
+  lock:'<rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8.2 10.5V8a3.8 3.8 0 0 1 7.6 0v2.5"/>',
+  chev:'<path d="m9.5 6 6 6-6 6"/>',
+  check:'<path d="M5 12.5 9.5 17 19 7.5"/>',
+  vote:'<path d="M4 13h16v7H4zM8 13l3.5-8 5 2.2L13.8 13"/>'
+};
+const ic=(n,s=22,w=1.8)=>`<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]}</svg>`;
+
+/* Personajes originales: trazo tinta, formas planas */
+const INK="#15172A";
+const giftBuddy=`<svg class="mascot" viewBox="0 0 96 96" aria-hidden="true" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <ellipse cx="48" cy="89" rx="25" ry="3" fill="${INK}" opacity=".07" stroke="none"/>
+  <path d="M23 56c-7-4-10-11-8-18" stroke-width="2.4"/><circle cx="15" cy="36" r="4" fill="#FB923C"/>
+  <path d="M73 60c5 3 7 8 6 12" stroke-width="2.4"/><circle cx="79" cy="73" r="3.6" fill="#FB923C"/>
+  <rect x="22" y="44" width="52" height="42" rx="10" fill="#FB923C"/>
+  <rect x="56" y="44.8" width="9" height="40.4" fill="#8B5CF6" stroke="none"/>
+  <path d="M56 45v40M65 45v40"/>
+  <rect x="18" y="35" width="60" height="13" rx="5" fill="#FDBA74"/>
+  <rect x="56" y="35.8" width="9" height="11.4" fill="#8B5CF6" stroke="none"/>
+  <path d="M56 36v11M65 36v11"/>
+  <path d="M60.5 35c-8-11-19-10-16-3 2 4 10 4 16 3z" fill="#8B5CF6"/>
+  <path d="M60.5 35c8-11 19-10 16-3-2 4-10 4-16 3z" fill="#8B5CF6"/>
+  <circle cx="60.5" cy="35" r="3.4" fill="#C4B5FD"/>
+  <circle cx="33" cy="62" r="2.4" fill="${INK}" stroke="none"/><circle cx="45" cy="62" r="2.4" fill="${INK}" stroke="none"/>
+  <path d="M34.5 68.5q4.5 4 9 0"/>
+  <circle cx="28" cy="68" r="3" fill="#FFF2E7" stroke="none" opacity=".8"/><circle cx="50" cy="68" r="3" fill="#FFF2E7" stroke="none" opacity=".8"/>
+  <path d="M8 22l2 4M4 30h4M12 16v4" stroke="#2346D8" stroke-width="2"/>
+</svg>`;
+const balloonBuddy=`<svg width="46" height="52" viewBox="0 0 46 52" aria-hidden="true" fill="none" stroke="${INK}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M23 36c-4 5 3 7-1 14" stroke-width="1.5"/>
+  <ellipse cx="23" cy="19" rx="14" ry="16" fill="#8B5CF6"/>
+  <path d="M20.5 35h5l-2.5-3z" fill="#8B5CF6"/>
+  <ellipse cx="17.5" cy="12" rx="3" ry="4.5" fill="#fff" opacity=".35" stroke="none"/>
+  <circle cx="18.5" cy="20" r="1.8" fill="${INK}" stroke="none"/><circle cx="27.5" cy="20" r="1.8" fill="${INK}" stroke="none"/>
+  <path d="M20 25q3 2.6 6 0"/>
+  <path d="M40 8l2-2M41 14h3M36 4l.6-2.6" stroke="#FB923C" stroke-width="1.8"/>
+</svg>`;
+const friendsBuddy=`<svg class="friends" viewBox="0 0 120 72" aria-hidden="true" fill="none" stroke="${INK}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M55 46c4-7 4-15 2-21" stroke-width="2.4"/><circle cx="56.5" cy="22" r="4" fill="#FDBA74"/>
+  <path d="M65 46c-4-7-4-15-2-21" stroke-width="2.4"/><circle cx="63.5" cy="22" r="4" fill="#C4B5FD"/>
+  <path d="M14 70c-2-22 6-36 23-36s25 14 23 36z" fill="#FB923C"/>
+  <path d="M60 70c-2-20 6-33 23-33s25 13 23 33z" fill="#8B5CF6"/>
+  <circle cx="31" cy="51" r="2.2" fill="${INK}" stroke="none"/><circle cx="41" cy="51" r="2.2" fill="${INK}" stroke="none"/>
+  <path d="M32.5 57q3.5 3 7 0"/>
+  <circle cx="79" cy="53" r="2.2" fill="${INK}" stroke="none"/><circle cx="89" cy="53" r="2.2" fill="${INK}" stroke="none"/>
+  <path d="M80.5 59q3.5 3 7 0"/>
+  <path d="M60 4v7M50 9l4 4M70 9l-4 4" stroke="#2346D8" stroke-width="2"/>
+</svg>`;
+const squiggle=`<svg viewBox="0 0 80 12" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8c8-5 14-5 20 0s12 5 19 0 13-5 19 0 12 4 18-1" fill="none" stroke="#FB923C" stroke-width="3.2" stroke-linecap="round"/></svg>`;
+
+const statusBar=()=>`<div class="status" aria-hidden="true"><span>9:41</span><span class="isl"></span><span class="sig"><svg width="18" height="12" viewBox="0 0 18 12" fill="currentColor"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><span class="bat"></span></span></div>`;
+const nav=()=>`<nav class="nav" aria-label="Navegación principal">${D.nav.map(([i,l],k)=>`<button ${k===0?'aria-current="page"':''}><span class="pi">${ic(i,22)}</span><span>${l}</span></button>`).join('')}</nav>`;
+
+function A(){ return `${statusBar()}<div class="scroll"><div class="scr">
+<header class="hello">
+  <div class="topline"><p class="date">${D.hoy}</p><button class="av" aria-label="Tu perfil">${D.user.ini}</button></div>
+  <div class="greet"><h1>Hola, <span class="name">${D.user.apodo}${squiggle}</span></h1>${giftBuddy}</div>
+</header>
+
+<section class="sec" aria-labelledby="a-av" style="margin-top:-18px">
+  <h2 id="a-av" class="sr">Avisos</h2>
+  <ul class="alerts">${D.avisos.map((a,i)=>`<li><button class="alert ${i===0?'first':''}">
+    <span class="ico">${i===0?balloonBuddy:ic('bell',20)}</span>
+    <span class="tx"><span class="when">En ${a.dias} días</span><strong>${a.ocasion}</strong><span class="s">${a.fecha} · ${a.grupo}</span></span>
+    <span class="chev">${ic('chev',18)}</span></button></li>`).join('')}</ul>
+</section>
+
+<section class="sec" aria-labelledby="a-vo">
+  <div class="sh"><h2 id="a-vo">Pendiente de tu voto <span class="count" aria-label="2 pendientes">2</span></h2></div>
+  <ul class="rows">${D.votos.map(v=>`<li><button class="row vote"><span class="tile">${ic('vote',20)}</span><span class="tx"><span class="k">${v.tipo}</span><span class="t">${v.texto}</span></span><span style="color:var(--mut)">${ic('chev',18)}</span></button></li>`).join('')}</ul>
+</section>
+
+<section class="sec" aria-labelledby="a-co">
+  <div class="sh"><h2 id="a-co">Regalos que organizas</h2><button class="more">Ver todos</button></div>
+  <ul class="rows">${D.compromisos.map(c=>`<li><button class="row gift">
+    <span class="tile">${ic(c.ic,20)}</span>
+    <span class="tx"><span class="t">${c.deseo}</span><span class="s">Para ${c.para} · ${c.ocasion}</span>
+    ${c.colab?`<span class="colab-tag">Colaborativo · ${c.colab.part} participantes</span><span class="meter" aria-hidden="true"><i style="width:${Math.round(c.colab.aporte/c.colab.precio*100)}%"></i></span><span class="meter-l">${c.colab.aporte} € comprometidos de ≈ ${c.colab.precio} € · estimado</span>`:''}</span>
+    <span class="pill ${c.estado==='Comprado'?'bought':''}">${c.estado==='Comprado'?ic('check',13,2.4):''}${c.estado}</span>
+  </button></li>`).join('')}</ul>
+</section>
+
+<section class="sec" aria-labelledby="a-oc">
+  <div class="sh occ-h"><h2 id="a-oc">Próximas ocasiones <span class="dots" aria-hidden="true"><i style="background:var(--orange)"></i><i style="background:var(--purple)"></i><i style="background:var(--cobalt)"></i></span></h2><button class="more">Calendario</button></div>
+  <ul class="tl">${D.ocasiones.map(o=>`<li><button class="occ ${o.own?'own':''}">
+    <span class="cal"><b>${o.dia}</b><span>${o.mes}</span></span>
+    <span class="tx"><span class="t">${o.nombre}</span>
+      <span class="s">${o.own?o.grupos:`Para ${o.para} · ${o.grupos}`}</span>
+      ${o.own?`<span class="lock">${ic('lock',13,2)}La sorpresa queda fuera de tu vista</span>`:''}</span>
+    <span class="left ${o.dias<=14?'soon':''}">${o.dias} días</span></button></li>`).join('')}</ul>
+</section>
+
+<section class="sec" aria-labelledby="a-li">
+  <div class="sh"><h2 id="a-li">Mis listas</h2><button class="more">Ver todas</button></div>
+  <div class="lists">${D.listas.map(l=>`<button class="lcard"><b>${l.pend}<small>pendientes</small></b><span><span class="t">${l.nombre}</span><span class="tag ${l.shared?'shared':'priv'}">${l.shared?'':ic('lock',11,2.2)}${l.comp}</span></span></button>`).join('')}</div>
+  <button class="add">${ic('plus',20,2.2)}Añadir deseo</button>
+</section>
+
+<section class="sec" aria-labelledby="a-gr">
+  <div class="grp-h"><h2 id="a-gr">Mis grupos</h2>${friendsBuddy}</div>
+  <div class="chips">${D.grupos.map(g=>`<button class="chip"><i>${g.i}</i>${g.n} <span>${g.m} integrantes</span></button>`).join('')}</div>
+</section>
+</div></div>${nav()}<div class="homebar"></div>`;}
+
+const panel=document.getElementById('panel'); let tt;
+panel.innerHTML=A()+'<div class="toast" role="status" aria-live="polite"></div>';
+panel.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  const t=panel.querySelector('.toast'); t.textContent='Exploración visual: solo está diseñada la pantalla de inicio.';
+  t.classList.add('on'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('on'),1800);
+});
+</script>
+
+</body></html>
